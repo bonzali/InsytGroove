@@ -1,0 +1,13 @@
+.PhotoList {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  .photo-item {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

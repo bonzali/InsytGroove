@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Logo from 'assets/log_white_fotter-1.png'
+import Auth from "components/Auth"
+
+import './App.scss';
+import Home from "components/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [authed, setAuthed] = React.useState(false)
+    return (
+        <div className="App">
+          <img alt={'Esoko logo'} src={Logo}/>
+            <div className={'app-container'}>
+                {authed ? <Home logout={() => setAuthed(false)}/> : <Auth setAuthed={() => setAuthed(true)}/>}
+            </div>
+
+        </div>
+    );
 }
 
 export default App;
