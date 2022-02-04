@@ -13,7 +13,8 @@ function SignUp({onComplete} : Props) {
         id : 0 ,
         name : '' ,
         username : '' ,
-        phone : ''
+        phone : '',
+        password : ''
     })
 
     const onChange = ( event : any) => {
@@ -23,12 +24,12 @@ function SignUp({onComplete} : Props) {
 
     const  onSubmit = async () => {
         setError('')
-        if(!user.name || !user.username || !user.email || !user.phone) {
+        if(!user.name || !user.username || !user.email || !user.phone || !user.password) {
             setError('All Fields are required')
             return
         }
         try {
-            const response = await registerUser(user)
+             await registerUser(user)
             onComplete()
         }catch (e) {
             setError('Sorry !!!! Something went wrong , try again later')
@@ -41,7 +42,7 @@ function SignUp({onComplete} : Props) {
                 <input onChange={onChange} type={'number'} name='phone' placeholder={'Enter phone number'}/>
                 <input onChange={onChange} type={'email'} name='email' placeholder={'Enter email'}/>
                 <input onChange={onChange} type={'password'} name={'password'} placeholder={'Password'} />
-                <button onClick={() => {onSubmit()}}>Login</button>
+                <button onClick={() => {onSubmit()}}>Register</button>
                 {error && <p className={'error'}>{error}</p>}
         </div>
     );
