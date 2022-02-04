@@ -30,7 +30,7 @@ function Auth({setAuthed}: Props) {
                     />
                 </div>
                 {view === 'login' ? <Login setAuthed={setAuthed}/> : <Signup onComplete={() => {
-                    setView('register')
+                    setView('login')
                 }}/>}
             </div>
 
