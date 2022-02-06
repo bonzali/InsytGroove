@@ -12,9 +12,14 @@ type Props = {
 };
 
 function UserFeed({ user, logout }: Props) {
+  const elementRef = React.useRef<HTMLDivElement>(null);
   const [view, setView] = React.useState<'post' | 'photo'>('post');
+  React.useEffect(() => {
+    if (elementRef.current) elementRef.current.scrollTo(0, 0);
+  }, [user?.id]);
+
   return (
-    <div className={'UserFeed'}>
+    <div ref={elementRef} className={'UserFeed'}>
       <div className={'feed-header'}>
         <div className={'user-info'}>
           <img
