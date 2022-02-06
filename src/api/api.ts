@@ -2,21 +2,20 @@ import axios, { Method } from 'axios';
 import { defaultConfig, objectToQueryString } from './config';
 
 export type ApiParam = {
-  method?: Method
-  params?: object //url request params
-  body?: object //body data
-  url: string //
-  contentType?: string
-}
-
+  method?: Method;
+  params?: object; //url request params
+  body?: object; //body data
+  url: string; //
+  contentType?: string;
+};
 
 const api = ({
-               method,
-               url,
-               params,
-               body,
-               contentType = 'application/json',
-             }: ApiParam): Promise<any> => {
+  method,
+  url,
+  params,
+  body,
+  contentType = 'application/json',
+}: ApiParam): Promise<any> => {
   return new Promise((resolve, reject) => {
     axios({
       url: `${defaultConfig.baseURL}${url}`,
@@ -36,7 +35,7 @@ const api = ({
         } else {
           reject(defaultConfig.error);
         }
-      },
+      }
     );
   });
 };

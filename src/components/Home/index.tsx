@@ -3,7 +3,7 @@ import './style.scss';
 import UserList from 'components/UserList';
 import PhotoList from 'components/PhotoList';
 import UserFeed from 'components/UserFeed';
-import { FaEdit, FaCross } from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 import { User } from 'definitions/user';
 import CreatePost from 'components/CreatePost';
 type Props = {
@@ -15,7 +15,6 @@ function Home({ logout }: Props) {
   return (
     <div className={'Home'}>
       <button onClick={() => setIsOpen(true)} className={'new-post-button'}>
-        {' '}
         <FaEdit />
       </button>
       <UserList onUserSelected={(user) => setUser(user)} />
