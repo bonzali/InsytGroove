@@ -22,7 +22,7 @@ function Home({ logout }: Props) {
       {user ? (
         <UserFeed logout={logout} user={user} />
       ) : (
-        <div className='photo-container'>
+        <div className="photo-container">
           <h3>Community</h3>
           <PhotoList />
         </div>

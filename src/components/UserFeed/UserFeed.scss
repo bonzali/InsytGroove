@@ -1,29 +1,29 @@
 .UserFeed {
   overflow: scroll;
+  padding-left: 16px;
   width: 100%;
-   .feed-header {
-     height: 50px;
-     position: relative;
-     padding-left: 16px;
-      justify-content: space-between;
-     & , .user-info {
-       display: flex;
-       flex-direction: row;
-       align-items: center;
-     }
-     .user-info {
-       gap: 12px;
-
-     }
-     .logout {
-       padding: 12px;
-     }
-     .user-info > img {
-       width: 38px;
-       height: 38px;
-       border-radius: 50%;
-       object-fit: cover;
-       overflow: hidden;
-     }
-   }
+  .feed-header {
+    height: 50px;
+    position: relative;
+    justify-content: space-between;
+    &,
+    .user-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .user-info {
+      gap: 12px;
+    }
+    .logout {
+      padding: 12px;
+    }
+    .user-info > img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
 }
